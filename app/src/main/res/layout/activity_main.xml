@@ -127,6 +127,8 @@
     </LinearLayout>
 </ScrollView>
 
+
+
     <!-- BottomAppBar -->
 <com.google.android.material.bottomappbar.BottomAppBar
 android:id="@+id/app_bar"

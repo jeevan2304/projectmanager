@@ -1,5 +1,6 @@
 package com.example.projectmanager.Activity
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
@@ -10,7 +11,9 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.example.projectmanager.Adapter.OngoingAdapter
 import com.example.projectmanager.R
 import com.example.projectmanager.ViewModel.MainViewModel
-import com.example.projectmanager.databinding.ActivityMainBinding // ✅ Correct binding import
+import com.example.projectmanager.databinding.ActivityMainBinding
+//import com.example.projectmanager.Activity.ProfileActivity
+
 
 class DashboardActivity : AppCompatActivity() {
 
@@ -30,11 +33,19 @@ class DashboardActivity : AppCompatActivity() {
         }
 
         binding.apply {
+            // Initialize the adapter for ongoing items
             val ongoingAdapter by lazy { OngoingAdapter(mainViewModel.loadData()) }
             viewOngoing.apply {
                 adapter = ongoingAdapter
                 layoutManager = GridLayoutManager(this@DashboardActivity, 2)
             }
+
+//            // Set up the click listener for the profile ImageView
+//            imageprofile.setOnClickListener {
+//                // Start ProfileActivity when the profile image is clicked
+//                val intent = Intent(this@DashboardActivity, ProfileActivity::class.java)
+//                startActivity(intent)
+//            }
         }
     }
 }

@@ -58,9 +58,6 @@ class OngoingAdapter(private val items: List<OngoingDomain>):RecyclerView.Adapte
         holder.progressBar.progress = item.progressPercent
         with(holder) {
             if (position == 0) {
-                layout.setBackgroundResource(R.drawable.dark_bg)
-                setTextColors(R.color.white)
-
             }
             else{
                 layout.setBackgroundResource(R.drawable.light_purple_background)
